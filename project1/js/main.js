@@ -72,7 +72,7 @@ canvas.addEventListener('mousemove', function(evt){
      	hero.move();
   		hero.drawBody();
   	}
-
+ 	evt.preventDefault();
 
 }, false);
 
