@@ -65,11 +65,11 @@ canvas.addEventListener('touchstart', function(evt){
     mmouseX = evt.pageX;
     mmouseY = evt.pageY;
 
-    if(mmouseX > 200){
+    if(mmouseX > canvasWidth/2){
     	hero.direction = "right";
      	hero.move();
   		hero.drawBody();
-  	}else if(mmouseX < 200){
+  	}else if(mmouseX < canvasWidth/2){
     	hero.direction = "left";
      	hero.move();
   		hero.drawBody();
