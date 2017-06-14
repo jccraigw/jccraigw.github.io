@@ -29,11 +29,11 @@ var score = 0;
 //audio
 var audio = document.getElementById("audio");
 audio.src = "audio/soundtrack.wav";
-var sound = 0;
+var sound = 1;
 
 var effects = document.getElementById("effects");
 effects.src = "audio/items.mp3";
-var soundEffects = 0;
+var soundEffects = 1;
 
 var playEffect = function(){
 
@@ -397,7 +397,7 @@ var drawItems = function(){
 			
 			if(i ===3 || i === 4 || i ===5){
 
-				ctx.drawImage(shark,  itemsArray[i].x, itemsArray[i].y, 40, 40);
+				ctx.drawImage(shark,  itemsArray[i].x, itemsArray[i].y, 60, 60);
 
 			}else{
 				ctx.drawImage(chest,  itemsArray[i].x, itemsArray[i].y, 30, 30);
