@@ -58,6 +58,25 @@ var soundToggle = function() {
     }
 }
 
+//touchscreen
+canvas.addEventListener('mousemove', function(evt){
+    mmouseX = evt.pageX;
+    mmouseY = evt.pageY;
+
+    if(mmouseX > 200){
+    	hero.direction = "right";
+     	hero.move();
+  		hero.drawBody();
+  	}else if(mmouseX < 200){
+    	hero.direction = "left";
+     	hero.move();
+  		hero.drawBody();
+  	}
+
+
+}, false);
+
+
 // //hero drop velocity 
 var dy = 1;
 //variable to hold the heros radius to be used in collision detection
