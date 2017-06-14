@@ -636,60 +636,48 @@ var checkDeathPosition = function(){
 }
 
 
-window.addEventListener('resize', resizeCanvas, false);
-
-function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    /**
-     * Your drawings need to be inside this function otherwise they will be reset when 
-     * you resize the browser window and the canvas goes will be cleared.
-     */
-    var animateCanvas = function() {
 
 
-	    // add listener function to loop on ended
-		if(!sound){
-			loop();
-		}
-		
-		audio.addEventListener("ended", loop, false);	
-			
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		
-	    collisionDetection(); 
-	   	collisionDetection_Items();
-	    drawLines();
-	    drawItems();
-	    hero.drawBody();
-	    healthDisplay();
-	    scoreBoard();
-	    resetLines();
-	    resetItems();
-	    resetSharks();
-	    moveLinesUp();
-	    moveBoxesUp();
-	    enrageSharks();
-	    checkHealth();
-	    checkDeathPosition();
-		hero.drawBody();
+var animateCanvas = function() {
 
-	    //constant drop added to hero
-	    hero.body.y += dy;
-	 
-	    window.requestAnimationFrame(animateCanvas);
+
+    // add listener function to loop on ended
+	if(!sound){
+		loop();
 	}
+	
+	audio.addEventListener("ended", loop, false);	
+		
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	
+    collisionDetection(); 
+   	collisionDetection_Items();
+    drawLines();
+    drawItems();
+    hero.drawBody();
+    healthDisplay();
+    scoreBoard();
+    resetLines();
+    resetItems();
+    resetSharks();
+    moveLinesUp();
+    moveBoxesUp();
+    enrageSharks();
+    checkHealth();
+    checkDeathPosition();
+	hero.drawBody();
+
+    //constant drop added to hero
+    hero.body.y += dy;
+ 
+    window.requestAnimationFrame(animateCanvas);
+}
 
 	//initializes hero for the game
 	getRandomTop();
 	getRandomBottom();
 	hero.initHero();
 	animateCanvas();
-}
-    resizeCanvas();
-
-
 
 
 
