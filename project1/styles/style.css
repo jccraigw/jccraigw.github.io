@@ -2,6 +2,7 @@ body{
 
 	width: 400px;
   margin: 0;
+  padding: 0;
   overflow-x: hidden;
 
 }
@@ -19,7 +20,7 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-   overflow-x: hidden;
+  
 }
 .score{
 
