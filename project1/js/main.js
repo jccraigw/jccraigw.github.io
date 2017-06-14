@@ -177,7 +177,7 @@ var hero = {
 			//keeps hero on canvas
 			if(hero.body.x < canvasWidth - heroRadius*2){
 				//move the heros x position 10 to the right
-				hero.body = {x: hero.body.x + 10, y: hero.body.y, r: 10, e: 0}
+				hero.body = {x: hero.body.x + 15, y: hero.body.y, r: 10, e: 0}
 
 				
 				
@@ -189,7 +189,7 @@ var hero = {
 
 				//keeps hero on canvas
 				if(hero.body.x > heroRadius){
-				hero.body = {x: hero.body.x - 10, y: hero.body.y, r: 10, e: 0}
+				hero.body = {x: hero.body.x - 15, y: hero.body.y, r: 10, e: 0}
 				
 				//determines if booser item is hit and speeds up hero
 				
