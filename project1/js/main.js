@@ -59,7 +59,7 @@ var soundToggle = function() {
 }
 
 //touchscreen
-canvas.addEventListener('mousemove', function(evt){
+canvas.addEventListener('touchstart', function(evt){
     mmouseX = evt.pageX;
     mmouseY = evt.pageY;
 
