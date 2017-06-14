@@ -3,6 +3,8 @@ console.log("hi");
 //grabing 2d canvas to work on
 var canvas = document.getElementById('myCanvas');
 var ctx = canvas.getContext('2d');
+ctx.canvas.width  = window.innerWidth;
+ctx.canvas.height = window.innerHeight;
 
 //image graphics
 var image = document.getElementById('source');
