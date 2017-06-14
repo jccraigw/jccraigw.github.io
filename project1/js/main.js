@@ -17,8 +17,10 @@ var chest = document.getElementById('treasure');
 var splash = document.getElementById('splash');
 
 var dead = document.getElementById('dead_scuba');
+var expl = document.getElementById('expl_scuba');
 var shark = document.getElementById('shark');
 var state = false;
+var state_expl = false;
 
 var health = 3;
 var score = 0;
@@ -59,7 +61,7 @@ var soundToggle = function() {
 }
 
 //touchscreen
-canvas.addEventListener('touchend', function(evt){
+canvas.addEventListener('touchstart', function(evt){
     mmouseX = evt.pageX;
     mmouseY = evt.pageY;
 
@@ -98,21 +100,27 @@ var frameCounter =0;
 var healthDisplay = function(){
 	ctx.fillStyle = "rgba(255,255,255, 0.9)";
 	ctx.font = "bold 14px Arial";
-	ctx.fillText("Life Remaining: "+health, 30, 20);
+	ctx.fillText("Life Remaining: "+health, 20, 20);
 }
 
 var scoreBoard = function(){
 
 	ctx.fillStyle = "rgba(255,255,255, 0.9)";
 	ctx.font = "bold 14px Arial";
-	ctx.fillText("Score: "+score, 300, 20);
+	ctx.fillText("Score: "+score, 340, 20);
 }
 
 var gameOverDisplay = function(){
 
 	ctx.fillStyle = "rgba(255,255,255, 0.9)";
 	ctx.font = "bold 24px Arial";
-	ctx.fillText("GAME OVER", 30, 100);
+	ctx.fillText("GAME OVER", 20, 100);
+	setTimeout(restart, 4000);
+}
+
+var restart = function(){
+
+	window.location.reload();
 }
 
 //HERO
@@ -137,9 +145,13 @@ var hero = {
 
 		if(state === true){
 			
-			ctx.drawImage(dead,525, 0,60,45,hero.body.x-20, hero.body.y-25, 60, 45);
+			ctx.drawImage(dead,0, 0,60,45,hero.body.x-20, hero.body.y-18, 60, 45);
 
-		}else if(hero.direction=== 'right'){
+		}else if(state_expl === true){
+
+			ctx.drawImage(expl,0, 0,75,65,hero.body.x-20, hero.body.y-28, 60, 45);
+		}
+		else if(hero.direction=== 'right'){
 
 			ctx.drawImage(image,30, 0,50,45,hero.body.x-20, hero.body.y-25, 50, 45);
 
@@ -635,7 +647,7 @@ var checkHealth = function(){
 
     	gameOverDisplay();
     	dy = 0;	
-		state= true;
+		state_expl= true;
 		
     }
 
