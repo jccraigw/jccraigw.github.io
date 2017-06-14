@@ -6,6 +6,9 @@ var ctx = canvas.getContext('2d');
 ctx.canvas.width  = window.innerWidth;
 ctx.canvas.height = window.innerHeight;
 
+canvasWidth = ctx.canvas.width;
+canvasHeight = ctx.canvas.height;
+
 //image graphics
 var image = document.getElementById('source');
 var image_left = document.getElementById('source_left');
@@ -141,7 +144,7 @@ var hero = {
 		if(hero.direction === 'right'){
 
 			//keeps hero on canvas
-			if(hero.body.x < canvas.width - heroRadius){
+			if(hero.body.x < canvasWidth - heroRadius*2){
 				//move the heros x position 10 to the right
 				hero.body = {x: hero.body.x + 10, y: hero.body.y, r: 10, e: 0}
 
@@ -188,7 +191,7 @@ document.addEventListener('keydown', function(event){
 //array to hold the line obstacles that make up the level;
 //keeps a min and max for each row along the x axis
 //added random blocks for left side to add variation then randomly select one each time
-var levelArray = [{x: 300,  y: 50,   xMax: 400}, //0
+var levelArray = [{x: 300,  y: 50,   xMax: canvasWidth}, //0
 				  {x: 0,    y: 100,  xMax: 100}, //1
 				  {x: 0,    y: 200,  xMax: 150}, //2
 				  {x: 200,  y: 250,  xMax: 300}, //3
@@ -196,18 +199,18 @@ var levelArray = [{x: 300,  y: 50,   xMax: 400}, //0
 				  {x: 150,  y: 350,  xMax: 300}, //5
 				  {x: 0,    y: 400,  xMax: 200}, //6 
 				  {x: 0,    y: 520,  xMax: 150}, //7 
-				  {x: 200,  y: 550,  xMax: 400}, //8
+				  {x: 200,  y: 550,  xMax: canvasWidth}, //8
 				  {x: 150,  y: 750,  xMax: 250}, //9//not being detected 
 				  {x: 0,    y: 650,  xMax: 250}, //10 
-				  {x: 300,  y: 700,  xMax: 400}, //11    
+				  {x: 300,  y: 700,  xMax: canvasWidth}, //11    
 				  {x: 200,  y: 150,  xMax: 250}, //12
 				  {x: 200,  y: 150,  xMax: 300}, //13
 				  {x: 200,  y: 150,  xMax: 350}, //14
-				  {x: 200,  y: 150,  xMax: 400}, //15
+				  {x: 200,  y: 150,  xMax: canvasWidth}, //15
 				  {x: 200,  y: 450,  xMax: 250}, //16
 				  {x: 200,  y: 450,  xMax: 300}, //17
 				  {x: 200,  y: 450,  xMax: 350}, //18
-				  {x: 200,  y: 450,  xMax: 400}, //19
+				  {x: 200,  y: 450,  xMax: canvasWidth}, //19
 				  ];
 //array to hold the x and y position of the items on the canvas
 var itemsArray = [{x: 250, y: 220, status: 1},
@@ -252,14 +255,20 @@ var drawLines= function(){
 
 		}else if(i === 8){
 
-			for(var k = 0; k < 7; k++){
+			for(var k = 0; k < 8; k++){
 
 				ctx.drawImage(barrier,(levelArray[i].x + 10) + picOffset * k, levelArray[i].y-20, 50, 50);
 			}	
 
-		}else if (i === 9 || i === 11){
+		}else if (i === 9 ){
 			
 			for(var k = 0; k < 3; k++){
+
+				ctx.drawImage(barrier,(levelArray[i].x + 10) + picOffset * k, levelArray[i].y-20, 50, 50);
+			}	
+
+		}else if(i === 11){
+			for(var k = 0; k < 4; k++){
 
 				ctx.drawImage(barrier,(levelArray[i].x + 10) + picOffset * k, levelArray[i].y-20, 50, 50);
 			}	
