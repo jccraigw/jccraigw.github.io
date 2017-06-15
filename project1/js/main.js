@@ -60,6 +60,20 @@ var soundToggle = function() {
     }
 }
 
+$(function() {
+  
+  $('#bs-example-navbar-collapse-1')
+    .on('shown.bs.collapse', function() {
+      $('#navbar-hamburger').addClass('hidden');
+      $('#navbar-close').removeClass('hidden');    
+    })
+    .on('hidden.bs.collapse', function() {
+      $('#navbar-hamburger').removeClass('hidden');
+      $('#navbar-close').addClass('hidden');        
+    });
+  
+});
+
 //touchscreen
 canvas.addEventListener('touchstart', function(evt){
     mmouseX = evt.pageX;
@@ -115,7 +129,7 @@ var gameOverDisplay = function(){
 	ctx.fillStyle = "rgba(255,255,255, 0.9)";
 	ctx.font = "bold 24px Arial";
 	ctx.fillText("GAME OVER", 20, 100);
-	setTimeout(restart, 4000);
+	//setTimeout(restart, 4000);
 }
 
 var restart = function(){

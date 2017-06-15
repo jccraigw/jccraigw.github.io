@@ -10,8 +10,58 @@ body{
 
 
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 }
+.navbar-header{
+
+  border-color: rgba(0, 0, 0, 0.1);
+
+}
+#navbar-close {
+  color: #888;
+  width: 22px;
+  height: 14px;
+}
+
+.navbar{
+
+  margin-bottom: 0;
+  width:  100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.1);
+  color: white;
+  border: none;
+
+}
+.navbar-default .navbar-toggle{
+
+  border:none;
+}
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
+
+  background-color: rgba(0, 0, 0, 0);
+
+}
+.navbar-default .navbar-nav>.active>a{
+
+  background-color: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, .5); ;
+
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form{
+
+  border-color: rgba(0, 0, 0, 0.1);
+}
+.glyphicon-remove:before{
+
+  color:rgba(0, 0, 0, 0.1);
+}
+.navbar-default .navbar-toggle .icon-bar{
+
+  background-color:rgba(0, 0, 0, 0.1);
+}
+
+
 #myCanvas{
 
 	background-color: #40a4df;
@@ -21,12 +71,9 @@ body{
   -o-background-size: cover;
   background-size: cover;
   
+  
 }
-.score{
 
-	color: white;
-	font-size: 12px;
-}
 .instructions_wrapper{
 
 	margin-left: 10px;
@@ -98,12 +145,7 @@ h3{
 
 	outline:none;
 }
-li{
 
-	font-size: 25px;
-	font-family: 'Cinzel', serif;
-	color: #ffffff;
-}
 #keys{
 
 	width: 200px;
