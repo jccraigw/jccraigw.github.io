@@ -114,21 +114,21 @@ var frameCounter =0;
 var healthDisplay = function(){
 	ctx.fillStyle = "rgba(255,255,255, 0.9)";
 	ctx.font = "bold 14px Arial";
-	ctx.fillText("Life Remaining: "+health, 20, 20);
+	ctx.fillText("Life Remaining: "+health, 20, 100);
 }
 
 var scoreBoard = function(){
 
 	ctx.fillStyle = "rgba(255,255,255, 0.9)";
 	ctx.font = "bold 14px Arial";
-	ctx.fillText("Score: "+score, 340, 20);
+	ctx.fillText("Score: "+score, 340, 100);
 }
 
 var gameOverDisplay = function(){
 
 	ctx.fillStyle = "rgba(255,255,255, 0.9)";
 	ctx.font = "bold 24px Arial";
-	ctx.fillText("GAME OVER", 20, 100);
+	ctx.fillText("GAME OVER", 20, 150);
 	//setTimeout(restart, 4000);
 }
 

@@ -48,6 +48,11 @@ body{
   color: rgba(0, 0, 0, .5); ;
 
 }
+.navbar-default .navbar-nav>.active>a:hover{
+
+   background-color: rgba(0, 0, 0, 0);
+  color: rgba(0, 0, 0, .5); ;
+}
 .navbar-default .navbar-collapse, .navbar-default .navbar-form{
 
   border-color: rgba(0, 0, 0, 0.1);
@@ -61,6 +66,31 @@ body{
   background-color:rgba(0, 0, 0, 0.1);
 }
 
+.progress {
+    width: 20%;
+    margin-top: 15px;
+    background-color: rgba(0,0,0,.1);
+    margin-bottom: 0px;
+    display: inline-block;
+    float: left;
+    
+}
+.percent{
+
+  height: 10px;
+  font-size: 10px;
+}
+
+.score{
+
+  display: inline-block;
+  width: 10px;
+  float: left;
+  margin-left: 25%;
+  margin-top: 15px;
+  
+
+}
 
 #myCanvas{
 
