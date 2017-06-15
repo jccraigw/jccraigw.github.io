@@ -26,6 +26,18 @@ var health = 4;
 var score = 0;
 
 
+var start = document.getElementById('start');
+start.addEventListener('touchstart', function(){
+
+	console.log("got here");
+	animateCanvas();
+
+	start.style.visibility = 'hidden';
+
+});
+
+
+
 //audio
 var audio = document.getElementById("audio");
 audio.src = "audio/soundtrack.wav";
@@ -43,7 +55,8 @@ var playEffect = function(){
 var loop = function () {
     audio.play();
 }
-       
+
+   
        
 var soundToggle = function() {
     if (!sound && !soundEffects) {
@@ -58,6 +71,25 @@ var soundToggle = function() {
         soundEffects = 0;
         button.value = "Sounds ON";
     }
+}
+
+var paused = false;
+var clicked = 1;
+
+
+
+var startToggle = function(){
+
+    if (!paused && clicked ===1) { // Already paused
+   	
+    clicked = 0; // Game was restarted, so you're not paused anymore
+  } else{ // Only other option is the game isn't paused, means currently playing
+    // pause the game!
+    paused = true;
+    clicked = 1;
+    return; // Game was paused, so you're now paused
+  }
+
 }
 
 $(function() {
@@ -115,6 +147,8 @@ var healthMeter = document.getElementById('health');
 var percent = document.getElementById('percent');
 var scoreDisplay = document.getElementById('score');
 
+
+
 var healthDisplay = function(){
 	// ctx.fillStyle = "rgba(255,255,255, 0.9)";
 	// ctx.font = "bold 14px Arial";
@@ -122,6 +156,7 @@ var healthDisplay = function(){
 	healthMeter.style.width = health * 25 + "%";
 	percent.innerHTML = health * 25 + "%";
 }
+healthDisplay();
 
 var scoreBoard = function(){
 
@@ -706,7 +741,7 @@ var checkDeathPosition = function(){
 
 var animateCanvas = function() {
 
-
+	
     // add listener function to loop on ended
 	if(!sound){
 		loop();
@@ -735,15 +770,19 @@ var animateCanvas = function() {
 
     //constant drop added to hero
     hero.body.y += dy;
- 
+
+ 	
     window.requestAnimationFrame(animateCanvas);
+
+
+
 }
 
 	//initializes hero for the game
 	getRandomTop();
 	getRandomBottom();
 	hero.initHero();
-	animateCanvas();
+	
 
 
 

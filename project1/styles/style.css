@@ -89,7 +89,7 @@ body{
   margin-left: 22%;
   margin-top: 8px;
   font-size: 25px;
-  
+
   
 
 }
@@ -185,7 +185,7 @@ h3{
 	height: 200px;
 
 }
-#button{
+/*#button{
   background: #7a7077;
   background-image: -webkit-linear-gradient(top, #7a7077, #7a7077);
   background-image: -moz-linear-gradient(top, #7a7077, #7a7077);
@@ -222,7 +222,15 @@ h3{
 #button:focus{
 
   outline:none;
-}
+}*/
 @-ms-viewport{
   width: device-width;
+}
+#start{
+  position:fixed;
+  float right;
+  margin-top: 200px;
+  font-size: 80px;
+  margin-left: 20%;
+  color: #ffffff;
 }
