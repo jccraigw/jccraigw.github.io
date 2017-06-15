@@ -30,6 +30,7 @@ var start = document.getElementById('start');
 start.addEventListener('touchstart', function(){
 
 	console.log("got here");
+
 	animateCanvas();
 
 	start.style.visibility = 'hidden';
@@ -173,10 +174,13 @@ var gameOverDisplay = function(){
 	ctx.fillStyle = "rgba(255,255,255, 0.9)";
 	ctx.font = "bold 60px Arial";
 	ctx.fillText("GAME OVER", 20, 150);
-	//setTimeout(restart, 4000);
+	//start.style.visibility = 'visible';
+
+	setTimeout(restart, 4000);
 }
 
 var restart = function(){
+
 
 	window.location.reload();
 }
