@@ -521,7 +521,7 @@ var collisionDetection_Items = function(){
                 	health-=1;
                 }
 
-                if((i === 0 || i === 1 || i === 2 || i === 6 || i === 7 || i === 8 || i === 9) && state != true){
+                if((i === 0 || i === 1 || i === 2 || i === 6 || i === 7 || i === 8 || i === 9) && state != true || state_expl != true){
 
                 	score+=1;
                 	//console.log(i + " - hit")
@@ -671,7 +671,7 @@ var checkHealth = function(){
     	gameOverDisplay();
     	dy = 0;	
 		state_expl= true;
-		state= true;
+
 		
     }
 
