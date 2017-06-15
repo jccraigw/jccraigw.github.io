@@ -75,19 +75,21 @@ body{
     float: left;
     
 }
-.percent{
+#percent{
 
   height: 10px;
   font-size: 10px;
 }
 
-.score{
+#score{
 
   display: inline-block;
   width: 10px;
   float: left;
-  margin-left: 25%;
-  margin-top: 15px;
+  margin-left: 22%;
+  margin-top: 8px;
+  font-size: 25px;
+  
   
 
 }
@@ -95,11 +97,12 @@ body{
 #myCanvas{
 
 	background-color: #40a4df;
-	background-image: url('../images/heather-wiggins-underwater-smaller.jpg');
+	background-image: url('../images/background.png');
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-position: top -50px;
   
   
 }

@@ -22,7 +22,7 @@ var shark = document.getElementById('shark');
 var state = false;
 var state_expl = false;
 
-var health = 3;
+var health = 4;
 var score = 0;
 
 
@@ -111,23 +111,32 @@ var frameCounter =0;
 //HEALTH & SCOREBOARD
 //
 //
+var healthMeter = document.getElementById('health');
+var percent = document.getElementById('percent');
+var scoreDisplay = document.getElementById('score');
+
 var healthDisplay = function(){
-	ctx.fillStyle = "rgba(255,255,255, 0.9)";
-	ctx.font = "bold 14px Arial";
-	ctx.fillText("Life Remaining: "+health, 20, 100);
+	// ctx.fillStyle = "rgba(255,255,255, 0.9)";
+	// ctx.font = "bold 14px Arial";
+	// ctx.fillText("Life Remaining: "+health, 20, 100);
+	healthMeter.style.width = health * 25 + "%";
+	percent.innerHTML = health * 25 + "%";
 }
 
 var scoreBoard = function(){
 
-	ctx.fillStyle = "rgba(255,255,255, 0.9)";
-	ctx.font = "bold 14px Arial";
-	ctx.fillText("Score: "+score, 340, 100);
+	// ctx.fillStyle = "rgba(255,255,255, 0.9)";
+	// ctx.font = "bold 14px Arial";
+	// ctx.fillText("Score: "+score, 340, 100);
+	if(!state){
+		scoreDisplay.innerHTML = score;
+	}
 }
 
 var gameOverDisplay = function(){
 
 	ctx.fillStyle = "rgba(255,255,255, 0.9)";
-	ctx.font = "bold 24px Arial";
+	ctx.font = "bold 60px Arial";
 	ctx.fillText("GAME OVER", 20, 150);
 	//setTimeout(restart, 4000);
 }
@@ -662,6 +671,7 @@ var checkHealth = function(){
     	gameOverDisplay();
     	dy = 0;	
 		state_expl= true;
+		state= true;
 		
     }
 
