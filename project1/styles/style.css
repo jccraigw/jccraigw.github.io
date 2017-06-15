@@ -226,11 +226,26 @@ h3{
 @-ms-viewport{
   width: device-width;
 }
+.start_wrapper{
+
+  
+  width: 100%;
+  margin-top: 330px;
+  height: 80px;
+  text-align: center;
+  opacity: 1;
+  background-color: rgba(0,0,0,0);
+  position: absolute;
+}
 #start{
-  position:fixed;
-  float right;
-  margin-top: 200px;
-  font-size: 80px;
-  margin-left: 20%;
+  
+ 
+  display: inline;
+  font-size: 60px;
+  color: black;
+ background-color: rgba(0,0,0,0);
+  margin: 0 auto;
+  border: none;
   color: #ffffff;
+  
 }
