@@ -16,6 +16,7 @@ body{
 
   border-color: rgba(0, 0, 0, 0.1);
 
+
 }
 #navbar-close {
   color: #888;
@@ -31,6 +32,7 @@ body{
   background-color: rgba(0, 0, 0, 0.1);
   color: white;
   border: none;
+ height: 80px;
 
 }
 .navbar-default .navbar-toggle{
@@ -66,9 +68,14 @@ body{
   background-color:rgba(0, 0, 0, 0.1);
 }
 
+.container-fluid>.navbar-collapse{
+
+  height: 100px;
+}
+
 .progress {
     width: 20%;
-    margin-top: 15px;
+    margin-top: 25px;
     background-color: rgba(0,0,0,.1);
     margin-bottom: 0px;
     display: inline-block;
@@ -86,13 +93,27 @@ body{
   display: inline-block;
   width: 10px;
   float: left;
-  margin-left: 22%;
-  margin-top: 8px;
+  margin-left: 4% ;
+  margin-top: 35px;
+  font-size: 30px;
+
+
+  
+
+}
+.score_header{
+
+  display: inline-block;
+  width: 10px;
+  float: left;
+  margin-left: 17%;
+  margin-top: 5px;
   font-size: 25px;
 
   
 
 }
+
 
 #myCanvas{
 
@@ -102,8 +123,7 @@ body{
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position: top -50px;
-  
+  background-position: top -50px;  
   
 }
 
@@ -226,6 +246,7 @@ h3{
 @-ms-viewport{
   width: device-width;
 }
+
 .start_wrapper{
 
   
@@ -236,6 +257,39 @@ h3{
   opacity: 1;
   background-color: rgba(0,0,0,0);
   position: absolute;
+}
+
+.left_directions{
+
+  width: 50%;
+  float:left;
+  height: 500px;
+  display: inline-block;
+    position: absolute;
+    background-color: rgba(0,0,0,0);
+     line-height: 500px;
+    vertical-align: middle;
+    margin-top: 200px;
+     color: #ffffff;
+  text-align: center;
+
+}
+
+
+.right_directions{
+
+  width: 50%;
+  float:right;
+  height: 500px;
+  display: inline-block;
+    position: absolute;
+    margin-left: 200px;
+    background-color: rgba(0,0,0,0);
+     line-height: 500px;
+    vertical-align: middle;
+    margin-top: 200px;
+    color: #ffffff;
+    text-align: center;
 }
 #start{
   

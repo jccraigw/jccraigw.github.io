@@ -29,7 +29,10 @@ var score = 0;
 var start = document.getElementById('start');
 start.addEventListener('touchstart', function(){
 
-	console.log("got here");
+	//initializes hero for the game
+	getRandomTop();
+	getRandomBottom();
+	hero.initHero();
 
 	animateCanvas();
 
@@ -555,12 +558,12 @@ var collisionDetection_Items = function(){
 	                //item hit so dont draw it
                 itemsArray[i].status = 0;
                 var frameCounter = 0;
-                if((i === 3 || i === 4 || i === 5) && state != true){
+                if((i === 3 || i === 4 || i === 5) && state != true && state_expl != true){
 
                 	health-=1;
                 }
 
-                if((i === 0 || i === 1 || i === 2 || i === 6 || i === 7 || i === 8 || i === 9) && state != true || state_expl != true){
+                if((i === 0 || i === 1 || i === 2 || i === 6 || i === 7 || i === 8 || i === 9) && state != true && state_expl != true){
 
                 	score+=1;
                 	//console.log(i + " - hit")
@@ -782,10 +785,7 @@ var animateCanvas = function() {
 
 }
 
-	//initializes hero for the game
-	getRandomTop();
-	getRandomBottom();
-	hero.initHero();
+	
 	
 
 
