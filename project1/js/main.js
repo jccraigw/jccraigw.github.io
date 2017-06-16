@@ -27,6 +27,8 @@ var score = 0;
 
 
 var start = document.getElementById('start');
+var right = document.getElementById('right');
+var left = document.getElementById('left');
 start.addEventListener('touchstart', function(){
 
 	//initializes hero for the game
@@ -37,6 +39,8 @@ start.addEventListener('touchstart', function(){
 	animateCanvas();
 
 	start.style.visibility = 'hidden';
+	right.style.visibility = 'hidden';
+	left.style.visibility = 'hidden';
 
 });
 
